@@ -1,6 +1,13 @@
+Application used to get items from stashed items and can filter the items with item name and league.
+This item set will refresh in 30sec to iterate with another items.
+
 # App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+
+## Json Server
+
+Run `npm run server` to start the db.json for using as backend.
 
 ## Development server
 
