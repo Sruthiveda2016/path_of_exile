@@ -1,0 +1,10 @@
+.table-content {
+  height: calc(100vh - 187px);
+  overflow-y: scroll;
+
+  .table-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+}

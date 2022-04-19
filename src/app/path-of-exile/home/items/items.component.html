@@ -1,0 +1,39 @@
+<div class="col-md-12 table-content"
+  *ngIf="this.dataFilterPipe?.transform(itemsList,filterObj)?.length; else no_record_temp">
+  <table class="table table-responsive table-hover table-striped table-bordered">
+    <thead class="thead-light table-dark table-header">
+      <tr class="justify-content-center">
+        <th></th>
+        <th>Item Name</th>
+        <th>Type</th>
+        <th>User</th>
+        <th>League</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of itemsList| dataFilter:filterObj">
+        <tr *ngIf="item.name">
+          <td><img src={{item.icon}} alt="Games" class="img-responsive img-rounded"
+              style="max-height: 50px; max-width: 50px;" /></td>
+          <td>{{item.name}}</td>
+          <td>{{item.typeLine}}</td>
+          <td>{{item.accountName}}</td>
+          <td>{{item.league}}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+<ng-template #no_record_temp>
+  <div class="col-md-12 table-content d-flex align-items-center justify-content-center"
+    *ngIf="itemsList.length; else spinner">
+    <span>No matching records were found.</span>
+  </div>
+  <ng-template #spinner>
+    <div class="col-md-12 table-content d-flex justify-content-center align-items-center">
+      <div class="spinner-border text-primary" style="width: 5rem; height: 5rem;" role="status">
+        <span class="sr-only"></span>
+      </div>
+    </div>
+  </ng-template>
+</ng-template>

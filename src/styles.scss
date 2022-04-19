@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  min-height: 100vh;
+  min-height: -moz-available;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
+}
